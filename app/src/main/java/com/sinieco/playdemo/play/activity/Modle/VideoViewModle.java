@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.sinieco.playdemo.MainActivity;
+import com.sinieco.playdemo.play.activity.PlayerActivity;
 import com.sinieco.playdemo.R;
 import com.sinieco.playdemo.play.Video;
 import com.sinieco.playdemo.play.VideoProvider;
@@ -59,7 +59,7 @@ public class VideoViewModle {
             holder.icon.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(activity , MainActivity.class);
+                    Intent intent = new Intent(activity , PlayerActivity.class);
                     intent.putExtra("video",video);
                     activity.startActivity(intent);
                 }

@@ -571,7 +571,7 @@ public class PlayerManager {
          */
         @Override
         public boolean onDoubleTap(MotionEvent e) {
-            videoView.toggleAspectRatio();
+           videoView.toggleAspectRatio(); //切换视频大小
             return true;
         }
 
@@ -613,6 +613,11 @@ public class PlayerManager {
 
         @Override
         public boolean onSingleTapUp(MotionEvent e) {
+            if(videoView.isPlaying()){
+                videoView.pause();
+            }else {
+                videoView.start();
+            }
             return true;
         }
     }
