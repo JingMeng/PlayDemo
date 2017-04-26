@@ -150,11 +150,6 @@ public class PlayerModle implements PlayerManager.PlayerStateListener{
         }
 
         @Override
-        public boolean onSingleTapConfirmed(MotionEvent e) {
-            return super.onSingleTapConfirmed(e);
-        }
-
-        @Override
         public boolean onSingleTapUp(MotionEvent e) {
             return super.onSingleTapUp(e);
         }
