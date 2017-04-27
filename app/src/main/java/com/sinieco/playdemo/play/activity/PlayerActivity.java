@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.sinieco.playdemo.R;
 import com.sinieco.playdemo.common.PlayerManager;
@@ -27,13 +29,20 @@ import rx.schedulers.Schedulers;
 public class PlayerActivity extends AppCompatActivity implements IPlayerView {
     private PlayerManager player;
     private IPlayerPersenter playerPersenter ;
+    private LinearLayout top;
+    private RelativeLayout bottom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        top = (LinearLayout) findViewById(R.id.ll_top);
+        bottom = (RelativeLayout) findViewById(R.id.rl_bottom);
+
         playerPersenter = new PlayerPersenterImpl(this);
         playerPersenter.getVideoInfo(player ,this);
+        playerPersenter.initTopAndBottom(top , bottom);
 
     }
 
@@ -58,6 +67,11 @@ public class PlayerActivity extends AppCompatActivity implements IPlayerView {
 
     @Override
     public void pause() {
+
+    }
+
+    @Override
+    public void topAndBottomShow(LinearLayout top, RelativeLayout bottom) {
 
     }
 }

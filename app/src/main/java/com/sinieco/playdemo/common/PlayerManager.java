@@ -342,7 +342,6 @@ public class PlayerManager {
 
     private void onProgressSlide(float percent) {
         long position = videoView.getCurrentPosition();
-        Log.i("当前进度======",position+"");
         long duration = videoView.getDuration();
         long deltaMax = Math.min(100 * 1000, duration - position);
         long delta = (long) (deltaMax * percent);

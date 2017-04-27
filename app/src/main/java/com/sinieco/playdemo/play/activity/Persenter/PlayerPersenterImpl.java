@@ -2,6 +2,8 @@ package com.sinieco.playdemo.play.activity.Persenter;
 
 import android.app.Activity;
 import android.view.MotionEvent;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.sinieco.playdemo.common.PlayerManager;
 import com.sinieco.playdemo.play.IView.IPlayerView;
@@ -28,5 +30,10 @@ public class PlayerPersenterImpl implements IPlayerPersenter {
     @Override
     public boolean touch(MotionEvent event) {
         return modle.touch(event);
+    }
+
+    @Override
+    public void initTopAndBottom(LinearLayout top, RelativeLayout bottom) {
+        modle.initTopAndBottom(top , bottom );
     }
 }
